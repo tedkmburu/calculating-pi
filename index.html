@@ -12,12 +12,18 @@
             top: 0;
             left: 0;
         }
+        input
+        {
+            position: fixed;
+            top: 1080px;
+            z-index: 1000;
+        }
     </style>
     <script src="p5.min.js"></script>
     <script src="main.js"></script>
     
 </head>
 <body oncontextmenu="return false">
-    
+    <input type="range" value="4" min="1" step="0.01" max="4" name="rate" id="rate">
 </body>
 </html>

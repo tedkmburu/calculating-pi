@@ -5,7 +5,6 @@ const size = 1000;
 const diameter = size;
 const radius = diameter / 2 
 
-const dotsAtATime = 10000; 
 
 function setup() 
 {
@@ -17,6 +16,8 @@ function setup()
 
 function draw() 
 {
+     let dotsAtATime = Math.pow(10,document.getElementById("rate").value)
+
     for (let i = 0; i < dotsAtATime; i++) 
     {
         let x = round(Math.random() * size)
@@ -44,14 +45,15 @@ function draw()
     noStroke()
     fill(255)
     textSize(20)
-    text("ratio: " + ratio, 0, diameter + 20)
 
     let AreaOfCircle = ratio * size * size;
     let piValue = AreaOfCircle / (radius * radius)
-    text("pi: " + piValue, 0, diameter + 50)
+    text("pi = " + piValue, 0, diameter + 30)
 
-    let percent = (PI / piValue) * 100
-    text("difference: " + percent + "%", 0, diameter + 70)
+    let difference = PI - piValue
+    text("difference: " + difference, 0, diameter + 50)
+
+    text("total dots: " + totalDots, 0, diameter + 70)
 
 
     stroke("red")
