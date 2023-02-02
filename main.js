@@ -24,7 +24,7 @@ function draw()
 
         noStroke()
         fill(255)
-        rect(x - 1, y - 1, 2, 2)
+        rect(x, y, 1, 1)
 
         totalDots++
 
@@ -49,6 +49,9 @@ function draw()
     let AreaOfCircle = ratio * size * size;
     let piValue = AreaOfCircle / (radius * radius)
     text("pi: " + piValue, 0, diameter + 50)
+
+    let percent = (PI / piValue) * 100
+    text("difference: " + percent + "%", 0, diameter + 70)
 
 
     stroke("red")
